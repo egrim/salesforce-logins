@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/salesforce-logins/static/css/main.43dbb3eb.chunk.css",
-    "main.js": "/salesforce-logins/static/js/main.af39c07f.chunk.js",
-    "main.js.map": "/salesforce-logins/static/js/main.af39c07f.chunk.js.map",
+    "main.css": "/salesforce-logins/static/css/main.99d8342a.chunk.css",
+    "main.js": "/salesforce-logins/static/js/main.9b86fb3f.chunk.js",
+    "main.js.map": "/salesforce-logins/static/js/main.9b86fb3f.chunk.js.map",
     "runtime-main.js": "/salesforce-logins/static/js/runtime-main.b9f8f19a.js",
     "runtime-main.js.map": "/salesforce-logins/static/js/runtime-main.b9f8f19a.js.map",
     "static/js/2.9b37b56a.chunk.js": "/salesforce-logins/static/js/2.9b37b56a.chunk.js",
     "static/js/2.9b37b56a.chunk.js.map": "/salesforce-logins/static/js/2.9b37b56a.chunk.js.map",
     "index.html": "/salesforce-logins/index.html",
-    "precache-manifest.572afc8f1ff46e2289e9c7b6d7282ca1.js": "/salesforce-logins/precache-manifest.572afc8f1ff46e2289e9c7b6d7282ca1.js",
+    "precache-manifest.f9ea3f8a185a6d15669ffb1706e36716.js": "/salesforce-logins/precache-manifest.f9ea3f8a185a6d15669ffb1706e36716.js",
     "service-worker.js": "/salesforce-logins/service-worker.js",
-    "static/css/main.43dbb3eb.chunk.css.map": "/salesforce-logins/static/css/main.43dbb3eb.chunk.css.map",
+    "static/css/main.99d8342a.chunk.css.map": "/salesforce-logins/static/css/main.99d8342a.chunk.css.map",
     "static/js/2.9b37b56a.chunk.js.LICENSE.txt": "/salesforce-logins/static/js/2.9b37b56a.chunk.js.LICENSE.txt",
     "static/media/commerce.svg": "/salesforce-logins/static/media/commerce.ca639af6.svg",
     "static/media/heroku.svg": "/salesforce-logins/static/media/heroku.813b8a0a.svg",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.b9f8f19a.js",
     "static/js/2.9b37b56a.chunk.js",
-    "static/css/main.43dbb3eb.chunk.css",
-    "static/js/main.af39c07f.chunk.js"
+    "static/css/main.99d8342a.chunk.css",
+    "static/js/main.9b86fb3f.chunk.js"
   ]
 }
