@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import './App.css';
 import logins from './logins';
 
+
+const OPEN_ALL_LINK_CLASS = "open-all-link";
+
 const LoginsModal: React.FC = ({children}) => {
   return <div>
     <section role="dialog" tabIndex={-1}
@@ -21,14 +24,37 @@ const LoginsModal: React.FC = ({children}) => {
   </div>;
 };
 
-type TileProps = { name: string, link_url: string, img_url: string }
+const AddTile: React.FC = () => <Tile name=""
+                                      link_url="mailto:egrim@salesforce.com?subject=Missing%20login%20page&body=Here's%20a%20login%20you%20should%20add%3A%20%3CURL%20here%3E%0D%0A"
+                                      svg_url={process.env.PUBLIC_URL + "/assets/icons/utility-sprite/svg/symbols.svg#add"}
+                                      include_in_open_all={false}/>
 
-function Tile({name, link_url, img_url}: TileProps) {
+const Tile: React.FC<{
+  name: string,
+  link_url: string,
+  img_url?: string,
+  svg_url?: string,
+  include_in_open_all?: boolean
+}> = ({name, link_url, img_url, svg_url, include_in_open_all = true}) => {
+  let link_class_names = "slds-visual-picker slds-visual-picker_medium slds-text-link_reset";
+  if (include_in_open_all) {
+    link_class_names += " " + OPEN_ALL_LINK_CLASS;
+  }
+
+  let asset = null;
+  if (img_url !== undefined) {
+    asset = <img className="slds-icon slds-icon_large" src={img_url} aria-hidden="true" alt=""/>
+  } else if (svg_url !== undefined) {
+    asset = <svg className="slds-button__icon" aria-hidden="true">
+            <use xlinkHref={svg_url}/>
+          </svg>;
+  }
+
   return (
-    <a href={link_url} className="slds-visual-picker slds-visual-picker_medium slds-text-link_reset">
+    <a href={link_url} className={link_class_names}>
       <span className="slds-visual-picker__figure slds-visual-picker__icon slds-align_absolute-center slds-box_link">
         <span className="slds-icon_container">
-          <img className="slds-icon slds-icon_large" src={img_url} aria-hidden="true" alt=""/>
+          {asset}
         </span>
       </span>
       <span className="slds-visual-picker__body slds-align_absolute-center">
@@ -87,7 +113,7 @@ function OpenAllButton() {
         event.preventDefault();
         setShowPopover(false);
 
-        let pickerElements = document.querySelectorAll<HTMLAnchorElement>('a.slds-visual-picker');
+        let pickerElements = document.querySelectorAll<HTMLAnchorElement>(`.${OPEN_ALL_LINK_CLASS}`);
         let windowRefs: Window[] = [];
         for (let i = 0; i < pickerElements.length; i++) {
           let pickerElement = pickerElements[i];
@@ -118,6 +144,7 @@ function App() {
     <LoginsModal>
       {logins.map(login_data => <Tile name={login_data.name} link_url={login_data.link_url} key={login_data.link_url}
                                       img_url={login_data.img_url}/>)}
+      <AddTile/>
     </LoginsModal>
   )
 }
